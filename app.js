@@ -11,19 +11,19 @@ const generateComputerChoice = () => {
 };
 
 const generateResult = (userChoice, computerChoice) => {
+  // Define possible choices and their relationships
+  const choices = {
+    rock: { beats: "scissor" },
+    paper: { beats: "rock" },
+    scissor: { beats: "paper" },
+  };
+
+  // Determine the winner
   if (userChoice === computerChoice) {
-    result = "its a draw";
-  } else if (computerChoice === "rock" && userChoice === "paper") {
-    result = "you win!";
-  } else if (computerChoice === "rock" && userChoice === "scissor") {
-    result = "you lose!";
-  } else if (computerChoice === "paper" && userChoice === "rock") {
-    result = "you lose!";
-  } else if (computerChoice === "paper" && userChoice === "scissor") {
+    result = "It's a tie!";
+  } else if (choices[userChoice].beats === computerChoice) {
     result = "you  win!";
-  } else if (computerChoice === "scissor" && userChoice === "rock") {
-    result = "you  win!";
-  } else if (computerChoice === "scissor" && userChoice === "paper") {
+  } else {
     result = "you lose!";
   }
 };
