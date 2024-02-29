@@ -13,9 +13,9 @@ const generateComputerChoice = () => {
 const generateResult = (userChoice, computerChoice) => {
   // Define possible choices and their relationships
   const choices = {
-    rock: { beats: "scissor" },
+    rock: { beats: "scissors" },
     paper: { beats: "rock" },
-    scissor: { beats: "paper" },
+    scissors: { beats: "paper" },
   };
 
   // Determine the winner
@@ -38,7 +38,7 @@ possibleChoices.forEach((currentItem) => {
     } else if (randomNumber === 1) {
       computerChoice = "paper";
     } else {
-      computerChoice = "scissor";
+      computerChoice = "scissors";
     }
     generateResult(userChoice, computerChoice);
 
